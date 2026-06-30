@@ -53,18 +53,22 @@
         .inner-list li { font-size: 15px; color: #b5b5b8; padding-left: 20px; position: relative; }
         .inner-list li::before { content: "—"; position: absolute; left: 0; color: #ff2a2a; font-weight: bold; }
         .inner-list li span { color: #fff; font-weight: 600; }
-        .results-section { padding: 120px 0; background-color: #080808; }
-        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .student-card { background-color: #0c0c0c; border: 1px solid rgba(255, 255, 255, 0.04); padding: 32px; border-radius: 24px; display: flex; flex-direction: column; }
-        .student-header h4 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
-        .student-gallery { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 8px; }
-        .student-gallery img { width: 85px; height: 110px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); flex-shrink: 0; }
-        .student-gallery img.income-img { border-color: rgba(57, 255, 20, 0.2); }
-        .point-box { font-size: 14px; color: #b5b5b8; margin-top: 12px; }
-        .badge-a { color: #ff2a2a; font-weight: 700; text-transform: uppercase; font-size: 11px; display: block; }
-        .badge-b { color: #39ff14; font-weight: 700; text-transform: uppercase; font-size: 11px; display: block; }
-        .student-gallery::-webkit-scrollbar { height: 4px; }
-        .student-gallery::-webkit-scrollbar-thumb { background: rgba(44, 14, 14, 0.5); border-radius: 10px; }
+        .info-section { padding: 100px 0; background-color: #080808; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .info-card { background-color: #0c0c0c; border: 1px solid rgba(255, 255, 255, 0.03); padding: 40px; border-radius: 24px; }
+        .info-card h3 { font-size: 22px; margin-bottom: 16px; font-weight: 700; }
+        .info-card p { color: #777; font-size: 15px; }
+        .program-section { padding: 120px 0; }
+        .program-grid { display: flex; flex-direction: column; gap: 20px; }
+        .step-card { background-color: #0c0c0c; border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 24px; padding: 40px; display: grid; grid-template-columns: 70px 1fr; gap: 30px; }
+        .step-card.highlight { border-color: rgba(255, 42, 42, 0.4); background: linear-gradient(135deg, #0d0c0c 0%, #1c0505 100%); }
+        .step-num { font-size: 20px; font-weight: 800; color: #ff2a2a; background-color: rgba(255, 42, 42, 0.06); width: 56px; height: 56px; border-radius: 100px; display: flex; justify-content: center; align-items: center; align-self: start; }
+        .step-content h3 { font-size: 23px; font-weight: 700; margin-bottom: 8px; }
+        .step-description { color: #777; font-size: 15px; margin-bottom: 20px; }
+        .inner-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .inner-list li { font-size: 15px; color: #b5b5b8; padding-left: 20px; position: relative; }
+        .inner-list li::before { content: "—"; position: absolute; left: 0; color: #ff2a2a; font-weight: bold; }
+        .inner-list li span { color: #fff; font-weight: 600; }
         .tariffs-section { padding: 120px 0; background: radial-gradient(circle at 50% 80%, #230606 0%, #040404 60%); }
         .tariff-card { background-color: #0c0c0c; border: 1px solid rgba(255, 42, 42, 0.2); padding: 48px; border-radius: 32px; max-width: 550px; width: 100%; position: relative; margin: 0 auto; }
         .tariff-badge { position: absolute; top: -14px; left: 48px; background-color: #ff2a2a; color: #fff; padding: 4px 14px; border-radius: 100px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
@@ -97,7 +101,7 @@
             <div class="badge">Результат вместо бесконечного старта</div>
             <h1>Всё, что выведет тебя на стабильный доход в <span>Telegram</span></h1>
             <p class="hero-subtitle">Система, собранная на реальных победах и провалах. Готовый рабочий маршрут к первым деньгам на рассылках.</p>
-            <a href="https://t.me" target="_blank" class="btn btn-primary">Перейти к оплате</a>
+            <a href="https://t.me/m/4cIQbRPoNzBi" target="_blank" class="btn btn-primary">Перейти к оплате</a>
         </div>
     </header>
 
@@ -151,11 +155,11 @@
                 <div class="step-card">
                     <div class="step-num">01</div>
                     <div class="step-content">
-                        <h3>Модуль 1. Фундамент и Технологии Рассылок</h3>
+                        <h3>Модуль 1. Фундамент и Technologies Рассылок</h3>
                         <p class="step-description">Полное погружение в техническую часть ниши, чтобы твои сообщения доходили до целей, а не улетали в спам.</p>
                         <ul class="inner-list">
                             <li><span>Пошаговый технический разбор:</span> Самый детальный видеогайд на весь рабочий процесс с разбором тонкостей.</li>
-                            <li><span>Убойные креативы:</span> Правила составления текстов, которые цепляют взгляд + база готовых конвертящих примеров.</li>
+                            <li><span>Убойные креативы:</span> Правила составления текстов, которые цепляют взгляд + база готовых примерных шаблонов.</li>
                             <li><span>Безопасность и опыт:</span> Разбор критических ошибок — почему никогда нельзя работать с сегментом «школьников-рассыльщиков».</li>
                         </ul>
                     </div>
@@ -252,8 +256,8 @@
                 <div class="student-card">
                     <div class="student-gallery">
                         <img src="photo_2026-04-02_00-15-02.jpg" alt="Демьян">
-                        <img src="photo_2026-04-02_19-39-27.jpg" alt="Демьян с деньгами">
-                        <img src="photo_2026-04-02_19-39-29.jpg" class="income-img" alt="Доходы Демьяна">
+                        <img src="photo_2026-04-02_19-39-29.jpg" alt="Демьян с деньгами">
+                        <img src="photo_2026-04-02_19-39-27.jpg" class="income-img" alt="Доходы Демьяна">
                     </div>
                     <div class="student-header">
                         <h4>ДЕМЬЯН, 15 ЛЕТ</h4>
@@ -292,7 +296,7 @@
                 <div class="student-card">
                     <div class="student-gallery">
                         <img src="photo_2025-10-12_03-56-41.jpg" alt="Илья">
-                        <img src="photo_2026-06-28_23-21-58.jpg" class="income-img" alt="Доходы Ильи">
+                        <img src="photo_2026-06-28_23-21-58.jpg" class="income-img" alt="Доход Ильи">
                     </div>
                     <div class="student-header">
                         <h4>ИЛЬЯ</h4>
@@ -303,7 +307,7 @@
 
             </div>
             <div style="text-align: center; margin-top: 50px;">
-                <a href="https://t.me" target="_blank" class="btn btn-secondary">Больше отзывов — читать</a>
+                <a href="https://t.me/reviewsvabaze" target="_blank" class="btn btn-secondary">Больше отзывов — читать</a>
             </div>
         </div>
     </section>
@@ -327,14 +331,14 @@
                         <li>Бонус 2: Готовая база клиентов и папка с теплыми экспертами</li>
                         <li>Бонус 3: Индивидуальный разбор ваших личных продаж</li>
                     </ul>
-                    <a href="https://t.me" target="_blank" class="btn btn-primary tariff-btn">Войти в VA BAZE</a>
+                    <a href="https://t.me/m/4cIQbRPoNzBi" target="_blank" class="btn btn-primary tariff-btn">Войти в VA BAZE</a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <img src="photo_2026-06-13_22-12-00.jpg" style="width:60px; height:60px; object-fit:cover; border-radius:50%; margin-bottom:15px; border: 2px solid #ff2a2a;">
+        <img src="photo_2026-05-01_09-44-58.jpg" style="width:60px; height:60px; object-fit:cover; border-radius:50%; margin-bottom:15px; border: 2px solid #ff2a2a;">
         <p>© 2026 VA BAZE. Все права защищены.</p>
         <p style="color: #222; font-size: 11px; margin-top: 5px;">Стиль оформления вдохновлен PROD</p>
     </footer>
