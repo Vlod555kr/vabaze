@@ -350,4 +350,170 @@
             line-height: 1.5;
         }
         .badge-a {
+            color: #ff2a2a;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 11px;
+            display: block;
+            margin-bottom: 2px;
+            letter-spacing: 0.5px;
+        }
+        .badge-b {
+            color: #39ff14;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 11px;
+            display: block;
+            margin-bottom: 2px;
+            letter-spacing: 0.5px;
+        }
+        .student-gallery::-webkit-scrollbar {
+            height: 4px;
+        }
+        .student-gallery::-webkit-scrollbar-thumb {
+            background: rgba(255, 42, 42, 0.2);
+            border-radius: 10px;
+        }
+        .tariffs-section {
+            padding: 120px 0;
+            background: radial-gradient(circle at 50% 80%, #230606 0%, #040404 60%);
+        }
+        .tariffs-grid {
+            display: flex;
+            justify-content: center;
+        }
+        .tariff-card {
+            background-color: #0c0c0c;
+            border: 1px solid rgba(255, 42, 42, 0.2);
+            padding: 48px;
+            border-radius: 32px;
+            max-width: 550px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+        }
+        .tariff-badge {
+            position: absolute;
+            top: -14px;
+            left: 48px;
+            background-color: #ff2a2a;
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tariff-card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+        .price-block {
+            margin-bottom: 32px;
+            display: flex;
+            align-items: baseline;
+        }
+        .old-price {
+            font-size: 20px;
+            text-decoration: line-through;
+            color: #444;
+            margin-right: 16px;
+        }
+        .new-price {
+            font-size: 44px;
+            font-weight: 900;
+            color: #39ff14;
+        }
+        .tariff-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        .tariff-list li {
+            font-size: 15px;
+            color: #b5b5b8;
+            margin-bottom: 14px;
+            padding-left: 24px;
+            position: relative;
+        }
+        .tariff-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ff2a2a;
+            font-weight: bold;
+        }
+        .tariff-btn {
+            width: 100%;
+            text-align: center;
+        }
+        .footer {
+            padding: 60px 0 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            text-align: center;
+            color: #444;
+            font-size: 14px;
+        }
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .step-card { grid-template-columns: 1fr; gap: 16px; padding: 30px 24px; }
+            .info-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
 
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">VA<span>BAZE</span></a>
+            <div class="nav-links">
+                <a href="#about">Автор</a>
+                <a href="#about-target">Суть ниши</a>
+                <a href="#program">Что внутри базы</a>
+                <a href="#results">Результаты</a>
+                <a href="#tariffs">Тарифы</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <div class="badge">Результат вместо бесконечного старта</div>
+            <h1>Всё, что выведет тебя на стабильный доход в <span>Telegram</span></h1>
+            <p class="hero-subtitle">Система, собранная на реальных победах и провалах. Готовый рабочий маршрут к первым деньгам на рассылках.</p>
+            <div class="hero-buttons">
+                <a href="https://t.me" target="_blank" class="btn btn-primary">Перейти к оплате</a>
+            </div>
+        </div>
+    </header>
+    <section id="about" class="about-section">
+        <!-- Секция: Кто такой Владислав -->
+        <!-- Содержит информацию о 2-летнем опыте в рассылках, доходе 350–600к ₽ и жизни в Москве -->
+    </section>
+
+    <section id="about-target" class="info-section">
+        <!-- Секция: Что такое рассылки -->
+        <!-- Описание сути работы (поиск клиентов) и заработка (100-150к+ ₽/мес) -->
+    </section>
+
+    <section id="program" class="program-section">
+        <!-- Секция: Содержание VA BAZE -->
+        <!-- Описание 5 модулей: Технологии, Продажи, Личный бренд, Базы, Трафик (YouTube/TikTok) -->
+    </section>
+
+    <section id="results" class="results-section">
+        <!-- Секция: Истории успеха -->
+        <!-- Примеры учеников (Артём, Сергей, Демьян и др.) с доходами 100-200к+ ₽/мес -->
+    </section>
+
+    <section id="tariffs" class="tariffs-section">
+        <!-- Секция: Тарифы -->
+        <!-- Оффер: ВХОД В VA BAZE (12 499 ₽) -->
+    </section>
+
+    <footer class="footer">
+        <!-- Подвал сайта -->
+    </footer>
