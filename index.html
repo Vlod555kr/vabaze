@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA BAZE</title>
+    <style>
+    /* Перезагрузка стилей под стиль PROD с убойным красным акцентом */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #040404; /* Глубокий премиальный черный */
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Меню навигации */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(4, 4, 4, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    z-index: 1000;
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: #fff;
+    text-decoration: none;
+}
+.logo span {
+    color: #ff2a2a; /* Красный логотип */
+}
+.nav-links a {
+    color: #777;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* Главный экран */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+    background: radial-gradient(circle at 50% 30%, #2a0808 0%, #040404 65%); /* Красное свечение на фоне */
+    text-align: center;
+}
+.badge {
+    display: inline-block;
+    background-color: rgba(255, 42, 42, 0.08);
+    color: #ff3b3b;
+    border: 1px solid rgba(255, 42, 42, 0.2);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+h1 {
+    font-size: clamp(34px, 6.5vw, 68px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    max-width: 950px;
+    margin: 0 auto 24px auto;
+}
+h1 span {
+    color: #ff2a2a; /* Красное выделение ключевых слов */
+}
+.hero-subtitle {
+    font-size: clamp(16px, 2.3vw, 19px);
+    color: #88888b;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 16px 38px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: #ff2a2a; /* Основные кнопки стали огненно-красными */
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(255, 42, 42, 0.25);
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: #ff4545;
+    box-shadow: 0 12px 35px rgba(255, 42, 42, 0.5);
+}
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #ff2a2a;
+    color: #ff2a2a;
+}
+
+/* Заголовки секций */
+.section-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 48px;
+    text-transform: none;
+    text-align: center;
+}
+.section-title span {
+    color: #ff2a2a;
+}
+.section-subtitle {
+    color: #777;
+    margin-top: -30px;
+    margin-bottom: 60px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Секция О создателе */
+.about-section {
+    padding: 120px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1.8fr;
+    gap: 40px;
+    align-items: stretch;
+}
+.author-main-card {
+    background-color: #0c0c0c;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.photo-placeholder {
+    background-color: #141414;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.author-info {
+    padding: 24px;
+}
+.author-info h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.author-tag {
+    color: #777;
+    font-size: 14px;
+}
+.facts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.fact-card {
+    background-color: #0c0c0c;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 32px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.fact-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ff2a2a;
+    margin-bottom: 8px;
+}
+.fact-card p {
+    color: #b5b5b8;
+    font-size: 15px;
+}
+
+/* Секция Суть Ниши */
+.info-section {
+    padding: 100px 0;
+    background-color: #080808;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+.info-card {
+    background-color: #0c0c0c;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 24px;
+}
+.info-card h3 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+.info-card p {
+    color: #777;
+    font-size: 15px;
+}
+
+/* Программа обучения (Шаги) */
+.program-section {
+    padding: 120px 0;
+}
+.program-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.step-card {
+    background-color: #0c0c0c;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 24px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 30px;
+    transition: all 0.3s ease;
+}
+.step-card:hover {
+    border-color: rgba(255, 42, 42, 0.25);
+    background-color: #0f0c0c;
+}
+/* Выделенная карточка продаж (Модуль 2) */
+.step-card.highlight {
+    border-color: rgba(255, 42, 42, 0.4);
+    background: linear-gradient(135deg, #0d0c0c 0%, #1c0505 100%);
+}
+.step-num {
+    font-size: 20px;
+    font-weight: 800;
+    color: #ff2a2a;
+    background-color: rgba(255, 42, 42, 0.06);
+    width: 56px;
+    height: 56px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: start;
+}
+.step-content h3 {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+.step-description {
+    color: #777;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.inner-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.inner-list li {
+    font-size: 15px;
+    color: #b5b5b8;
+    padding-left: 20px;
+    position: relative;
+}
+.inner-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: #ff2a2a;
+    font-weight: bold;
+}
+.inner-list li span {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Результаты и Сетки учеников */
+.results-section {
+    padding: 120px 0;
+    background-color: #080808;
+}
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+.student-card {
+    background-color: #0c0c0c;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 32px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.student-header h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+/* ФОТО-ГАЛЕРЕИ УЧЕНИКОВ И ТОЧКИ А/Б */
+.student-gallery {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+.student-gallery img {
+    width: 85px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+.student-gallery img.income-img {
+    border-color: rgba(57, 255, 20, 0.2); /* Зеленая обводка для доходов */
+}
+.student-gallery img:hover {
+    transform: scale(1.05);
+}
+.point-box {
+    font-size: 14px;
+    color: #b5b5b8;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+.badge-a {
+    color: #ff2a2a;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    display: block;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+.badge-b {
+    color: #39ff14;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    display: block;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+/* Полоса прокрутки внутри карточек */
+.student-gallery::-webkit-scrollbar {
+    height: 4px;
+}
+.student-gallery::-webkit-scrollbar-thumb {
+    background: rgba(255, 42, 42, 0.2);
+    border-radius: 10px;
+}
+
+/* Тарифы */
+.tariffs-section {
+    padding: 120px 0;
+    background: radial-gradient(circle at 50% 80%, #230606 0%, #040404 60%);
+}
+.tariffs-grid {
+    display: flex;
+    justify-content: center;
+}
+.tariff-card {
+    background-color: #0c0c0c;
+    border: 1px solid rgba(255, 42, 42, 0.2); /* Красная премиальная рамка */
+    padding: 48px;
+    border-radius: 32px;
+    max-width: 550px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+.tariff-badge {
+    position: absolute;
+    top: -14px;
+    left: 48px;
+    background-color: #ff2a2a; /* Красная плашка */
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.tariff-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+.price-block {
+    margin-bottom: 32px;
+    display: flex;
+    align-items: baseline;
+}
+.old-price {
+    font-size: 20px;
+    text-decoration: line-through;
+    color: #444;
+    margin-right: 16px;
+}
+.new-price {
+    font-size: 44px;
+    font-weight: 900;
+    color: #39ff14; /* Зеленая цена денег */
+}
+.tariff-list {
+    list-style: none;
+    margin-bottom: 40px;
+}
+.tariff-list li {
+    font-size: 15px;
+    color: #b5b5b8;
+    margin-bottom: 14px;
+    padding-left: 24px;
+    position: relative;
+}
+.tariff-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #ff2a2a; /* Красные галочки */
+    font-weight: bold;
+}
+.tariff-btn {
+    width: 100%;
+    </style>
+</head>
+<body>
+<!-- Навигационная панель (Шапка) -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#" class="logo">VA<span>BAZE</span></a>
+        <div class="nav-links">
+            <a href="#about">Автор</a>
+            <a href="#about-target">Суть ниши</a>
+            <a href="#program">Что внутри базы</a>
+            <a href="#results">Результаты</a>
+            <a href="#tariffs">Тарифы</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Главный экран -->
+<header class="hero-section">
+    <div class="container">
+        <div class="badge">Результат вместо бесконечного старта</div>
+        <h1>Всё, что выведет тебя на стабильный доход в <span>Telegram</span></h1>
+        <p class="hero-subtitle">Система, собранная на реальных победах и провалах. Готовый рабочий маршрут к первым деньгам на рассылках.</p>
+        <div class="hero-buttons">
+            <a href="https://t.me" target="_blank" class="btn btn-primary">Перейти к оплате</a>
+        </div>
+    </div>
+</header>
+
+<!-- Блок Кто такой Владислав -->
+<section id="about" class="about-section">
+    <div class="container">
+        <h2 class="section-title">Кто такой <span>Владислав?</span></h2>
+        <div class="about-grid">
+            <!-- Главное фото автора -->
+            <div class="author-main-card">
+                <img src="https://ibb.co" alt="Владислав" style="width:100%; height:450px; object-fit:cover; border-bottom:1px solid rgba(255,255,255,0.05);">
+                <div class="author-info">
+                    <h3>Владислав</h3>
+                    <p class="author-tag">2 года в рассылках (и как исполнитель, и как наставник)</p>
+                </div>
+            </div>
+            
+            <!-- Правая колонка со списком фактов -->
+            <div class="facts-grid">
+                <div class="fact-card" style="background: linear-gradient(135deg, #0c0c0c 0%, #1a0505 100%);">
+                    <div class="fact-num">350–600к ₽</div>
+                    <p>Стабильный доход в месяц, на который вышел самостоятельно в 15 лет. Без связей, без денег, без поддержки.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-num">15 лет</div>
+                    <p>В этом возрасте переехал жить один. Сейчас живу в Москве, снимаю квартиру и полностью не завишу от родителей.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Суть ниши -->
+<section id="about-target" class="info-section">
+    <div class="container">
+        <h2 class="section-title">Что такое <span>рассылки?</span></h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <img src="https://ibb.co" style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px; opacity:0.7;">
+                <h3>Суть работы</h3>
+                <p>Ты помогаешь людям находить клиентов. Никаких сложных схем, никаких вложений, только телефон и желание. Просто пишешь в личку, договариваешься, приводишь подписчиков в каналы экспертам и бизнесам, они платят — ты зарабатываешь.</p>
+            </div>
+            <div class="info-card">
+                <img src="https://ibb.co" style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px; opacity:0.7;">
+                <h3>Сколько платят?</h3>
+                <p>На старте ты берешь 20-50 ₽ за одного приведенного подписчика. Это позволяет спокойно делать 100-150к ₽ в месяц. Потом — больше. Специалист по рассылкам — это человек, который умеет находить клиентов там, где другие не видят.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ПРОГРАММА ОБУЧЕНИЯ -->
+<section id="program" class="program-section">
+    <div class="container">
+        <h2 class="section-title">Полное содержание <span>VA BAZE</span></h2>
+        <p class="section-subtitle">Никакой воды. Только прикладные знания, упакованные в жесткую систему</p>
+        
+        <div class="program-grid">
+            <!-- Блок 1: Рассылки -->
+            <div class="step-card">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                    <h3>Модуль 1. Фундамент и Технологии Рассылок</h3>
+                    <p class="step-description">Полное погружение в техническую часть ниши, чтобы твои сообщения доходили до целей, а не улетали в спам.</p>
+                    <ul class="inner-list">
+                        <li><span>Пошаговый технический разбор:</span> Самый детальный видеогайд на весь рабочий процесс с разбором тонкостей.</li>
+                        <li><span>Убойные креативы:</span> Правила составления текстов, которые цепляют взгляд + база готовых конвертящих примеров.</li>
+                        <li><span>Безопасность и опыт:</span> Разбор критических ошибок — почему никогда нельзя работать с сегментом «школьников-рассыльщиков».</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Блок 2: Продажи -->
+            <div class="step-card highlight">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                    <h3>Модуль 2. Психология Высоких Чеков и Поиск Клиентов</h3>
+                    <p class="step-description">Как перестать продавать за копейки и начать закрывать сделки, от которых другие боятся даже заикаться.</p>
+                    <ul class="inner-list">
+                        <li><span>Большие чеки:</span> Пошаговый алгоритм продаж на созвонах с чеками от 200 000 ₽.</li>
+                        <li><span>Анализ рынка:</span> Правильное вычисление и составление портрета идеальной целевой аудитории.</li>
+                        <li><span>Цепляющий оффер:</span> Технология написания сильного приветственного предложения + реальные примеры.</li>
+                        <li><span>Поток заказчиков:</span> Секретные механики — где и как находить горы платежеспособных экспертов на свои услуги.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Блок 3: Личный бренд -->
+            <div class="step-card">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                    <h3>Модуль 3. Личный Бренд, Контент и Матрица Прогревов</h3>
+                    <p class="step-description">Создание упакованного канала, который будет продавать за тебя 24/7 и выстраивать людей в очередь.</p>
+                    <ul class="inner-list">
+                        <li><span>Упаковка под ключ:</span> Базовая настройка, правильное визуальное оформление и создание продающего профиля.</li>
+                        <li><span>Экспертный контент:</span> Как правильно и ответственно вести блог, создавая тексты, вызывающие доверие.</li>
+                        <li><span>Идеальный Лид-магнит:</span> Структура бесплатного продукта, который забирает контакты + разбор того, как это внедрено у меня.</li>
+                        <li><span>Прогревы нового поколения:</span> Как выстроить цепочку контента в канале так, чтобы люди сами писали о покупке.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Блок 4: Источники и Инструменты -->
+            <div class="step-card">
+                <div class="step-num">04</div>
+                <div class="step-content">
+                    <h3>Модуль 4. Закрытая База Источников и Связей</h3>
+                    <p class="step-description">Готовые рабочие инструменты, списки и контакты. Тебе не придется ничего искать вручную.</p>
+                    <ul class="inner-list">
+                        <li><span>Ресурсы:</span> Эксклюзивный доступ к закрытым блогам, рабочим папкам и приватным чатам.</li>
+                        <li><span>Таблица экспертов:</span> Проверенная база чатов с теплыми, готовыми к диалогу экспертами и заказчиками.</li>
+                        <li><span>Команда в работу:</span> Полный список проверенных дизайнеров для отрисовки портретов и специалистов под залив трафика.</li>
+                        <li><span>Разборы продаж:</span> Записи реальных эфиров, разборы моих личных продаж на огромные чеки (кейсы, ГС) + живые эфиры с разборами ваших переписок.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Блок 5: Трафик и Мышление -->
+            <div class="step-card">
+                <div class="step-num">05</div>
+                <div class="step-content">
+                    <h3>Модуль 5. Органический УБТ Трафик и Мышление</h3>
+                    <p class="step-description">Масштабирование твоего бизнеса без рекламного бюджета и мощная проработка головы.</p>
+                    <ul class="inner-list">
+                        <li><span>Алгоритмы TikTok:</span> Самый подробный практический гайд по заливу + наглядный разбор моего личного профиля.</li>
+                        <li><span>Взрывной YouTube:</span> Как правильно стрелять роликами в 2026 году и выжимать из платформы максимум заявок.</li>
+                        <li><span>Мышление на миллионы:</span> Сильнейший Reality Check в твоей жизни. Перепрошивка мозгов для работы на совершенно другом уровне.</li>
+                        <li><span>VA Community:</span> Доступ в закрытое живое комьюнити единомышленников и самые свежие новости/апдейты лично от меня.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Результаты учеников -->
+<section id="results" class="results-section">
+    <div class="container">
+        <h2 class="section-title">Истории успеха <span>Учеников</span></h2>
+        <div class="results-grid">
+            
+            <!-- Артём -->
+            <div class="student-card">
+                <div class="student-gallery">
+                    <img src="https://ibb.co" alt="Артём">
+                    <img src="https://ibb.co" alt="Артём на море">
+</body>
+</html>
