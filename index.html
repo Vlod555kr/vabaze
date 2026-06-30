@@ -12,7 +12,6 @@
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 22px; font-weight: 900; text-transform: uppercase; color: #fff; text-decoration: none; }
         .logo span { color: #ff2a2a; }
-        .nav-links a { color: #777; text-decoration: none; font-size: 14px; font-weight: 500; margin-left: 30px; }
         .hero-section { min-height: 100vh; display: flex; align-items: center; padding-top: 120px; background: radial-gradient(circle at 50% 30%, #2a0808 0%, #040404 65%); text-align: center; }
         .badge { display: inline-block; background: rgba(255,42,42,0.08); color: #ff3b3b; border: 1px solid rgba(255,42,42,0.2); padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
         h1 { font-size: clamp(34px, 6.5vw, 68px); font-weight: 800; line-height: 1.15; letter-spacing: -1.5px; max-width: 950px; margin: 0 auto 24px auto; }
@@ -39,17 +38,14 @@
         .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .info-card { background: #0c0c0c; border: 1px solid rgba(255,255,255,0.03); padding: 40px; border-radius: 24px; }
         .info-card h3 { font-size: 22px; margin-bottom: 16px; font-weight: 700; }
+        .info-card p { color: #777; font-size: 15px; }
         .program-section { padding: 120px 0; }
         .program-grid { display: flex; flex-direction: column; gap: 20px; }
         .step-card { background: #0c0c0c; border: 1px solid rgba(255,255,255,0.04); border-radius: 24px; padding: 40px; display: grid; grid-template-columns: 70px 1fr; gap: 30px; }
         .step-card.highlight { border-color: rgba(255,42,42,0.4); background: linear-gradient(135deg, #0d0c0c 0%, #1c0505 100%); }
-        .step-num { font-size: 20px; font-weight: 800; color: #ff2a2a; background: rgba(255,42,42,0.06); width: 56px; height: 56px; border-radius: 100px; display: flex; justify-content: center; align-items: center; }
+        .step-num { font-size: 20px; font-weight: 800; color: #ff2a2a; background: rgba(255,42,42,0.06); width: 56px; height: 56px; border-radius: 100px; display: flex; justify-content: center; align-items: center; align-self: start; }
         .step-content h3 { font-size: 23px; font-weight: 700; margin-bottom: 8px; }
         .step-description { color: #777; font-size: 15px; margin-bottom: 20px; }
-        .inner-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-        .inner-list li { font-size: 15px; color: #b5b5b8; padding-left: 20px; position: relative; }
-        .inner-list li::before { content: "—"; position: absolute; left: 0; color: #ff2a2a; font-weight: bold; }
-        .inner-list li span { color: #fff; font-weight: 600; }
         .results-section { padding: 120px 0; background: #080808; }
         .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
         .student-card { background: #0c0c0c; border: 1px solid rgba(255,255,255,0.04); padding: 32px; border-radius: 24px; display: flex; flex-direction: column; }
@@ -60,6 +56,8 @@
         .point-box { font-size: 14px; color: #b5b5b8; margin-top: 12px; }
         .badge-a { color: #ff2a2a; font-weight: 700; text-transform: uppercase; font-size: 11px; display: block; }
         .badge-b { color: #39ff14; font-weight: 700; text-transform: uppercase; font-size: 11px; display: block; }
+        .student-gallery::-webkit-scrollbar { height: 4px; }
+        .student-gallery::-webkit-scrollbar-thumb { background: rgba(255, 42, 42, 0.2); border-radius: 10px; }
         .tariffs-section { padding: 120px 0; background: radial-gradient(circle at 50% 80%, #230606 0%, #040404 60%); }
         .tariff-card { background: #0c0c0c; border: 1px solid rgba(255,42,42,0.2); padding: 48px; border-radius: 32px; max-width: 550px; width: 100%; position: relative; margin: 0 auto; }
         .tariff-badge { position: absolute; top: -14px; left: 48px; background: #ff2a2a; color: #fff; padding: 4px 14px; border-radius: 100px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
@@ -70,23 +68,15 @@
         .tariff-list li { font-size: 15px; color: #b5b5b8; margin-bottom: 14px; padding-left: 24px; position: relative; }
         .tariff-list li::before { content: "✓"; position: absolute; left: 0; color: #ff2a2a; font-weight: bold; }
         .footer { padding: 60px 0 40px 0; border-top: 1px solid rgba(255,255,255,0.03); text-align: center; color: #444; font-size: 14px; }
-        @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } .step-card { grid-template-columns: 1fr; gap: 16px; padding: 30px 24px; } .info-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+        @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } .step-card { grid-template-columns: 1fr; gap: 16px; padding: 30px 24px; } .info-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">VA<span>BAZE</span></a>
-            <div class="nav-links">
-                <a href="#about">Автор</a>
-                <a href="#about-target">Суть ниши</a>
-                <a href="#program">Что внутри базы</a>
-                <a href="#results">Результаты</a>
-                <a href="#tariffs">Тарифы</a>
-            </div>
         </div>
     </nav>
-
     <header class="hero-section">
         <div class="container">
             <div class="badge">Результат вместо бесконечного старта</div>
@@ -95,76 +85,34 @@
             <a href="https://t.me" target="_blank" class="btn btn-primary">Перейти к оплате</a>
         </div>
     </header>
-
     <section id="about" class="about-section">
         <div class="container">
             <h2 class="section-title">Кто такой <span>Владислав?</span></h2>
             <div class="about-grid">
                 <div class="author-main-card">
-                    <img src="https://squarespace-cdn.com" alt="Владислав" style="width:100%; height:450px; object-fit:cover;">
-                    <div class="author-info">
-                        <h3>Владислав</h3>
-                        <p class="author-tag">2 года в рассылках (и как исполнитель, и как наставник)</p>
-                    </div>
+                    <img src="https://ibb.co" alt="Владислав" style="width:100%; height:450px; object-fit:cover;">
+                    <div class="author-info"><h3>Владислав</h3><p class="author-tag">2 года в рассылках</p></div>
                 </div>
                 <div class="facts-grid">
-                    <div class="fact-card" style="background: linear-gradient(135deg, #0c0c0c 0%, #1a0505 100%);">
-                        <div class="fact-num">350–600к ₽</div>
-                        <p>Стабильный доход в месяц, на который вышел самостоятельно в 15 лет. Без связей, без денег, без поддержки.</p>
-                    </div>
-                    <div class="fact-card">
-                        <div class="fact-num">15 лет</div>
-                        <p>В этом возрасте переехал жить один. Сейчас живу в Москве, снимаю квартиру и полностью не завишу от родителей.</p>
-                    </div>
+                    <div class="fact-card"><div class="fact-num">350–600к ₽</div><p>Стабильный доход в месяц, на который вышел самостоятельно в 15 лет.</p></div>
+                    <div class="fact-card"><div class="fact-num">15 лет</div><p>В этом возрасте переехал жить один в Москву.</p></div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="results" class="results-section">
+    <section id="about-target" class="info-section">
         <div class="container">
-            <h2 class="section-title">Истории успеха <span>Учеников</span></h2>
-            <div class="results-grid">
-                <div class="student-card">
-                    <div class="student-gallery">
-                        <img src="https://squarespace-cdn.com" alt="Артём">
-                    </div>
-                    <div class="student-header"><h4>АРТЁМ</h4></div>
-                    <div class="point-box"><span class="badge-b">Результат:</span> 100–150к стабильно</div>
+            <h2 class="section-title">Что такое <span>рассылки?</span></h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <img src="https://ibb.co" style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                    <h3>Суть работы</h3><p>Ты помогаешь людям находить клиентов. Просто пишешь в личку и приводишь подписчиков в каналы.</p>
                 </div>
-                <div class="student-card">
-                    <div class="student-gallery">
-                        <img src="https://squarespace-cdn.com" alt="Сергей">
-                    </div>
-                    <div class="student-header"><h4>СЕРГЕЙ</h4></div>
-                    <div class="point-box"><span class="badge-b">Результат:</span> 173к чистыми</div>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="https://t.me" target="_blank" class="btn btn-secondary">Больше отзывов — читать</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="tariffs" class="tariffs-section">
-        <div class="container">
-            <h2 class="section-title">Прими <span>Решение</span></h2>
-            <div class="tariffs-grid">
-                <div class="tariff-card">
-                    <div class="tariff-badge">Ограниченный оффер</div>
-                    <h3>ВХОД В VA BAZE</h3>
-                    <div class="price-block">
-                        <span class="old-price">18 000 ₽</span>
-                        <span class="new-price">12 499 ₽</span>
-                    </div>
-                    <a href="https://t.me" target="_blank" class="btn btn-primary tariff-btn">Войти в VA BAZE</a>
+                <div class="info-card">
+                    <img src="https://ibb.co" style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                    <h3>Сколько платят?</h3><p>На старте ты берешь 20-50 ₽ за подписчика, создавая 100-150к ₽ в месяц.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <footer class="footer">
-        <p>© 2026 VA BAZE. Все права защищены.</p>
-    </footer>
-</body>
-</html>
+    <section id="program" class="program-section">
