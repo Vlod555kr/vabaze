@@ -53,22 +53,18 @@
         .inner-list li { font-size: 15px; color: #b5b5b8; padding-left: 20px; position: relative; }
         .inner-list li::before { content: "—"; position: absolute; left: 0; color: #ff2a2a; font-weight: bold; }
         .inner-list li span { color: #fff; font-weight: 600; }
-        .info-section { padding: 100px 0; background-color: #080808; }
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .info-card { background-color: #0c0c0c; border: 1px solid rgba(255, 255, 255, 0.03); padding: 40px; border-radius: 24px; }
-        .info-card h3 { font-size: 22px; margin-bottom: 16px; font-weight: 700; }
-        .info-card p { color: #777; font-size: 15px; }
-        .program-section { padding: 120px 0; }
-        .program-grid { display: flex; flex-direction: column; gap: 20px; }
-        .step-card { background-color: #0c0c0c; border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 24px; padding: 40px; display: grid; grid-template-columns: 70px 1fr; gap: 30px; }
-        .step-card.highlight { border-color: rgba(255, 42, 42, 0.4); background: linear-gradient(135deg, #0d0c0c 0%, #1c0505 100%); }
-        .step-num { font-size: 20px; font-weight: 800; color: #ff2a2a; background-color: rgba(255, 42, 42, 0.06); width: 56px; height: 56px; border-radius: 100px; display: flex; justify-content: center; align-items: center; align-self: start; }
-        .step-content h3 { font-size: 23px; font-weight: 700; margin-bottom: 8px; }
-        .step-description { color: #777; font-size: 15px; margin-bottom: 20px; }
-        .inner-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-        .inner-list li { font-size: 15px; color: #b5b5b8; padding-left: 20px; position: relative; }
-        .inner-list li::before { content: "—"; position: absolute; left: 0; color: #ff2a2a; font-weight: bold; }
-        .inner-list li span { color: #fff; font-weight: 600; }
+        .results-section { padding: 120px 0; background-color: #080808; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .student-card { background-color: #0c0c0c; border: 1px solid rgba(255, 255, 255, 0.04); padding: 32px; border-radius: 24px; display: flex; flex-direction: column; }
+        .student-header h4 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .student-gallery { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 8px; }
+        .student-gallery img { width: 85px; height: 110px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); flex-shrink: 0; }
+        .student-gallery img.income-img { border-color: rgba(57, 255, 20, 0.2); }
+        .point-box { font-size: 14px; color: #b5b5b8; margin-top: 12px; }
+        .badge-a { color: #ff2a2a; font-weight: 700; text-transform: uppercase; font-size: 11px; display: block; }
+        .badge-b { color: #39ff14; font-weight: 700; text-transform: uppercase; font-size: 11px; display: block; }
+        .student-gallery::-webkit-scrollbar { height: 4px; }
+        .student-gallery::-webkit-scrollbar-thumb { background: rgba(44, 14, 14, 0.5); border-radius: 10px; }
         .tariffs-section { padding: 120px 0; background: radial-gradient(circle at 50% 80%, #230606 0%, #040404 60%); }
         .tariff-card { background-color: #0c0c0c; border: 1px solid rgba(255, 42, 42, 0.2); padding: 48px; border-radius: 32px; max-width: 550px; width: 100%; position: relative; margin: 0 auto; }
         .tariff-badge { position: absolute; top: -14px; left: 48px; background-color: #ff2a2a; color: #fff; padding: 4px 14px; border-radius: 100px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
@@ -101,7 +97,7 @@
             <div class="badge">Результат вместо бесконечного старта</div>
             <h1>Всё, что выведет тебя на стабильный доход в <span>Telegram</span></h1>
             <p class="hero-subtitle">Система, собранная на реальных победах и провалах. Готовый рабочий маршрут к первым деньгам на рассылках.</p>
-            <a href="https://t.me/m/4cIQbRPoNzBi" target="_blank" class="btn btn-primary">Перейти к оплате</a>
+            <a href="https://t.me" target="_blank" class="btn btn-primary">Перейти к оплате</a>
         </div>
     </header>
 
@@ -129,6 +125,7 @@
             </div>
         </div>
     </section>
+
     <section id="about-target" class="info-section">
         <div class="container">
             <h2 class="section-title">Что такое <span>рассылки?</span></h2>
@@ -155,71 +152,70 @@
                 <div class="step-card">
                     <div class="step-num">01</div>
                     <div class="step-content">
-                        <h3>Модуль 1. Фундамент и Technologies Рассылок</h3>
+                        <h3>Модуль 1. Фундамент и Технологии Рассылок</h3>
                         <p class="step-description">Полное погружение в техническую часть ниши, чтобы твои сообщения доходили до целей, а не улетали в спам.</p>
                         <ul class="inner-list">
-                            <li><span>Пошаговый технический разбор:</span> Самый детальный видеогайд на весь рабочий процесс с разбором тонкостей.</li>
-                            <li><span>Убойные креативы:</span> Правила составления текстов, которые цепляют взгляд + база готовых примерных шаблонов.</li>
-                            <li><span>Безопасность и опыт:</span> Разбор критических ошибок — почему никогда нельзя работать с сегментом «школьников-рассыльщиков».</li>
+                            <li><span>Пошаговый технический разбор:</span> Самый детальный гайд на весь процесс со спикером и ссылками.</li>
+                            <li><span>Убойные креативы:</span> Грамотное составление целевого креатива + рабочие примеры.</li>
+                            <li><span>Безопасность:</span> Почему никогда нельзя работать с сегментом школьников-рассыльщиков + подробный разбор.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="step-card highlight">
                     <div class="step-num">02</div>
                     <div class="step-content">
-                        <h3>Модуль 2. Психология Высоких Чеков и Поиск Клиентов</h3>
+                        <h3>Модуль 2. Продажи и Высокие Чеки</h3>
                         <p class="step-description">Как перестать продавать за копейки и начать закрывать сделки, от которых другие боятся даже заикаться.</p>
                         <ul class="inner-list">
-                            <li><span>Большие чеки:</span> Пошаговый алгоритм продаж на созвонах с чеками от 200 000 ₽.</li>
-                            <li><span>Анализ рынка:</span> Правильное вычисление и составление портрета идеальной целевой аудитории.</li>
-                            <li><span>Цепляющий оффер:</span> Технология написания сильного приветственного предложения + реальные примеры.</li>
-                            <li><span>Поток заказчиков:</span> Секретные механики — где и как находить горы платежеспособных экспертов на свои услуги.</li>
+                            <li><span>Большие чеки:</span> Как продавать на большие чеки в звонках от 200к+.</li>
+                            <li><span>Анализ рынка:</span> Портрет целевой аудитории и правильное его составление.</li>
+                            <li><span>Цепляющий оффер:</span> Написание лучшего приветственного оффера, который цепляет + примеры.</li>
+                            <li><span>Поток заказчиков:</span> Где и как искать горы заказчиков и экспертов на свои услуги.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="step-card">
                     <div class="step-num">03</div>
                     <div class="step-content">
-                        <h3>Модуль 3. Личный Бренд, Контент и Матрица Прогревов</h3>
+                        <h3>Модуль 3. Блог + Личный Бренд</h3>
                         <p class="step-description">Создание упакованного канала, который будет продавать за тебя 24/7 и выстраивать людей в очередь.</p>
                         <ul class="inner-list">
-                            <li><span>Упаковка под ключ:</span> Базовая настройка, правильное визуальное оформление и создание продающего профиля.</li>
-                            <li><span>Экспертный контент:</span> Как правильно и ответственно вести блог, создавая тексты, вызывающие доверие.</li>
-                            <li><span>Идеальный Лид-магнит:</span> Структура бесплатного продукта, который забирает контакты + разбор того, как это внедрено у меня.</li>
-                            <li><span>Прогревы нового поколения:</span> Как выстроить цепочку контента в канале так, чтобы люди сами писали о покупке.</li>
+                            <li><span>Упаковка:</span> Создание, оформление и упаковка канала (базовая часть) + оформление продающего профиля с примерами.</li>
+                            <li><span>Контент:</span> Всё про важность и ответственность к блогу, продающий и экспертный контент + примеры.</li>
+                            <li><span>Лид-магнит:</span> Структура составления идеального лид-магнита в блоге + как это сделал я.</li>
+                            <li><span>Прогревы:</span> Как правильно выстроить прогрев в канале, чтобы к вам вставали в очередь.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="step-card">
                     <div class="step-num">04</div>
                     <div class="step-content">
-                        <h3>Модуль 4. Закрытая База Источников и Связей</h3>
+                        <h3>Модуль 4. Источники и Таблицы</h3>
                         <p class="step-description">Готовые рабочие инструменты, списки и контакты. Тебе не придется ничего искать вручную.</p>
                         <ul class="inner-list">
-                            <li><span>Ресурсы:</span> Эксклюзивный доступ к закрытым блогам, рабочим папкам и приватным чатам.</li>
-                            <li><span>Таблица экспертов:</span> Проверенная база чатов с теплыми, готовыми к диалогу экспертами и заказчиками.</li>
-                            <li><span>Команда в работу:</span> Полный список проверенных дизайнеров для отрисовки портретов и специалистов под залив трафика.</li>
-                            <li><span>Разборы продаж:</span> Записи реальных эфиров, разборы моих личных продаж на огромные чеки (кейсы, ГС) + живые эфиры с разборами ваших переписок.</li>
+                            <li><span>База ресурсов:</span> Доступ к приватным блогам, папкам и чатам. Таблица лучших чатов с экспертами. Папка с теплыми экспертами.</li>
+                            <li><span>Команда в работу:</span> Все источники для поиска дизайнеров для портрета и залива трафика в работу.</li>
+                            <li><span>Большая база чатов:</span> Подходит для сбора портретов и привлечения в каналы + 2 часть базы чатов.</li>
+                            <li><span>Разборы продаж:</span> Разбор моих продаж на большие чеки (кейсы, эфиры, ГС) + эфиры с разборами ваших личных продаж.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="step-card">
                     <div class="step-num">05</div>
                     <div class="step-content">
-                        <h3>Модуль 5. Органический УБТ Трафик и Мышление</h3>
+                        <h3>Модуль 5. УБТ Трафик и Мышление</h3>
                         <p class="step-description">Масштабирование твоего бизнеса без рекламного бюджета и мощная проработка головы.</p>
                         <ul class="inner-list">
-                            <li><span>Алгоритмы TikTok:</span> Самый подробный практический гайд по заливу + наглядный разбор моего личного профиля.</li>
-                            <li><span>Взрывной YouTube:</span> Как правильно стрелять роликами в 2026 году и выжимать из платформы максимум заявок.</li>
-                            <li><span>Мышление на миллионы:</span> Сильнейший Reality Check в твоей жизни. Перепрошивка мозгов для работы на совершенно другом уровне.</li>
-                            <li><span>VA Community:</span> Доступ в закрытое живое комьюнити единомышленников и самые свежие новости/апдейты лично от меня.</li>
+                            <li><span>Алгоритмы TikTok:</span> Лучший и самый подробный гайд на TikTok + разбор моего личного профиля.</li>
+                            <li><span>Взрывной YouTube:</span> Как стрельнуть на Ютубе в 2026 году // Всё про Ютуб.</li>
+                            <li><span>Мышление на миллионы:</span> Сильнейший Reality Check в твоей жизни. Перепрошивка мозгов для работы на другом уровне.</li>
+                            <li><span>Сообщество:</span> Доступ в VA Community и самые актуальные новости/апдейты напрямую от меня.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <section id="results" class="results-section">
         <div class="container">
             <h2 class="section-title">Истории успеха <span>Учеников</span></h2>
@@ -232,9 +228,7 @@
                         <img src="photo_2026-06-13_22-16-28.jpg" alt="Артём на море">
                         <img src="photo_2026-04-04_20-45-32.jpg" class="income-img" alt="Доходы Артёма">
                     </div>
-                    <div class="student-header">
-                        <h4>АРТЁМ, 18 ЛЕТ</h4>
-                    </div>
+                    <div class="student-header"><h4>АРТЁМ, 18 ЛЕТ</h4></div>
                     <div class="point-box"><span class="badge-a">Точка А:</span> Был в жестком найме, зарабатывал всего 30к/мес.</div>
                     <div class="point-box"><span class="badge-b">Точка Б:</span> Вышел на стабильные 100–150к ₽/мес, полностью изменил жизнь и теперь спокойно отдыхает на море.</div>
                 </div>
@@ -246,12 +240,11 @@
                         <img src="photo_2026-04-08_00-26-37.jpg" class="income-img" alt="Доходы Сергея 1">
                         <img src="photo_2026-04-08_00-26-38.jpg" class="income-img" alt="Доходы Сергея 2">
                     </div>
-                    <div class="student-header">
-                        <h4>СЕРГЕЙ, 18 ЛЕТ</h4>
-                    </div>
+                    <div class="student-header"><h4>СЕРГЕЙ, 18 ЛЕТ</h4></div>
                     <div class="point-box"><span class="badge-a">Точка А:</span> Работал за сущие копейки, искал себя и пути заработка.</div>
                     <div class="point-box"><span class="badge-b">Точка Б:</span> Разогнался до рекордных 173 000 ₽ чистыми за один месяц работы в базе.</div>
                 </div>
+
                 <!-- Демьян -->
                 <div class="student-card">
                     <div class="student-gallery">
@@ -259,9 +252,7 @@
                         <img src="photo_2026-04-02_19-39-29.jpg" alt="Демьян с деньгами">
                         <img src="photo_2026-04-02_19-39-27.jpg" class="income-img" alt="Доходы Демьяна">
                     </div>
-                    <div class="student-header">
-                        <h4>ДЕМЬЯН, 15 ЛЕТ</h4>
-                    </div>
+                    <div class="student-header"><h4>ДЕМЬЯН, 15 ЛЕТ</h4></div>
                     <div class="point-box"><span class="badge-a">Точка А:</span> Абсолютный новичок, вообще не знал с чего начать и как устроен онлайн-доход.</div>
                     <div class="point-box"><span class="badge-b">Точка Б:</span> Всего за 2 месяца обучения вышел на твердые 120к/мес. Держит в руках заработанный кэш.</div>
                 </div>
@@ -272,9 +263,7 @@
                         <img src="photo_2026-06-13_21-51-41.jpg" alt="Ярослав">
                         <img src="photo_2026-04-04_18-07-19.jpg" class="income-img" alt="Доходы Ярослава">
                     </div>
-                    <div class="student-header">
-                        <h4>ЯРОСЛАВ, 16 ЛЕТ</h4>
-                    </div>
+                    <div class="student-header"><h4>ЯРОСЛАВ, 16 ЛЕТ</h4></div>
                     <div class="point-box"><span class="badge-a">Точка А:</span> Пришел на обучение с абсолютным нулем базовых знаний в маркетинге.</div>
                     <div class="point-box"><span class="badge-b">Точка Б:</span> На дистанции в год выстроил мощную систему и зафиксировал доход 150к/мес.</div>
                 </div>
@@ -285,9 +274,7 @@
                         <img src="photo_2026-06-13_16-08-57.jpg" alt="Эльчин">
                         <img src="photo_2025-09-01_00-32-00.jpg" class="income-img" alt="Доходы Эльчина">
                     </div>
-                    <div class="student-header">
-                        <h4>ЭЛЬЧИН</h4>
-                    </div>
+                    <div class="student-header"><h4>ЭЛЬЧИН</h4></div>
                     <div class="point-box"><span class="badge-a">Точка А:</span> Перебивался заработком в 5-10к / мес, не понимал куда двигаться и чем заниматься.</div>
                     <div class="point-box"><span class="badge-b">Точка Б:</span> Заработок вырос до 100-150к / мес, полностью прокачал личный бренд, имеет десятки постоянных клиентов.</div>
                 </div>
@@ -298,19 +285,18 @@
                         <img src="photo_2025-10-12_03-56-41.jpg" alt="Илья">
                         <img src="photo_2026-06-28_23-21-58.jpg" class="income-img" alt="Доход Ильи">
                     </div>
-                    <div class="student-header">
-                        <h4>ИЛЬЯ</h4>
-                    </div>
+                    <div class="student-header"><h4>ИЛЬЯ</h4></div>
                     <div class="point-box"><span class="badge-a">Точка А:</span> Зарабатывал от 50к/мес на товарке, крутился на перепродаже айфонов и техники Apple.</div>
                     <div class="point-box"><span class="badge-b">Точка Б:</span> Пробил планку в 200к+/мес на полном пассиве без ведения блога, продавая услуги по продвижению каналов.</div>
                 </div>
 
             </div>
             <div style="text-align: center; margin-top: 50px;">
-                <a href="https://t.me/reviewsvabaze" target="_blank" class="btn btn-secondary">Больше отзывов — читать</a>
+                <a href="https://t.me" target="_blank" class="btn btn-secondary">Больше отзывов — читать</a>
             </div>
         </div>
     </section>
+
     <section id="tariffs" class="tariffs-section">
         <div class="container">
             <h2 class="section-title">Прими <span>Решение</span></h2>
@@ -331,16 +317,16 @@
                         <li>Бонус 2: Готовая база клиентов и папка с теплыми экспертами</li>
                         <li>Бонус 3: Индивидуальный разбор ваших личных продаж</li>
                     </ul>
-                    <a href="https://t.me/m/4cIQbRPoNzBi" target="_blank" class="btn btn-primary tariff-btn">Войти в VA BAZE</a>
+                    <a href="https://t.me" target="_blank" class="btn btn-primary tariff-btn">Войти в VA BAZE</a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <img src="" style="width:60px; height:60px; object-fit:cover; border-radius:50%; margin-bottom:15px; border: 2px solid #ff2a2a;">
+        <img src="photo_2026-05-01_09-44-58.jpg" style="width:60px; height:60px; object-fit:cover; border-radius:50%; margin-bottom:15px; border: 2px solid #ff2a2a;">
         <p>© 2026 VA BAZE. Все права защищены.</p>
-        <p style="color: #222; font-size: 11px; margin-top: 5px;"></p>
+        <p style="color: #222; font-size: 11px; margin-top: 5px;">Стиль оформления вдохновлен PROD</p>
     </footer>
 
 </body>
